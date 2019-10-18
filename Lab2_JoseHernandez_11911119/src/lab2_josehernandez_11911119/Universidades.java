@@ -1,3 +1,5 @@
+package lab2_josehernandez_11911119;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -98,9 +100,13 @@ public class Universidades {
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "" + "-Nombre de la universidad: " + nombreUni + "\n"
+                + "-Año de Creacion: " + creacion + "\n"
+                + "-Costo Mensual: " + costoMensual + "\n"
+                + "-Nivel: " + nivel + "\n";
+    }
 
 }
