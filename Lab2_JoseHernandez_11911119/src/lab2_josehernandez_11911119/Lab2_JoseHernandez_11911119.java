@@ -93,6 +93,9 @@ public class Lab2_JoseHernandez_11911119 {
                         } else {
                             lista.remove(pos);
                         }
+                    } else {
+                        System.out.println("Primero debe hacer el Log-In");
+                        System.out.println("");
                     }
                 }
                 break;
@@ -123,16 +126,22 @@ public class Lab2_JoseHernandez_11911119 {
                         int pos = input.nextInt();
                         if (((Universidades) lista.get(pos)).getNivel().equals("Publica")) {
                             ((Universidades) lista.get(pos)).setNivel("Publica Prestigiosa");
+                            ((Universidades) lista.get(pos)).setCostoMensual(200);
                         } else if (((Universidades) lista.get(pos)).getNivel().equals("Publica Prestigiosa")) {
                             ((Universidades) lista.get(pos)).setNivel("Nacional");
+                            ((Universidades) lista.get(pos)).setCostoMensual(500);
                         } else if (((Universidades) lista.get(pos)).getNivel().equals("Nacional")) {
                             System.out.println("Esta Universidad ya no se puede ascender mas");
 
                         } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada")) {
                             ((Universidades) lista.get(pos)).setNivel("Privada Prestigiosa");
+                            ((Universidades) lista.get(pos)).setCostoMensual(12000);
                         } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada Prestigiosa")) {
                             System.out.println("Esta universidad ya no se puede ascender mas");
                         }
+                    } else {
+                        System.out.println("Primero debe hacer el Log-In");
+                        System.out.println("");
                     }
                 }
                 break;
@@ -142,6 +151,9 @@ public class Lab2_JoseHernandez_11911119 {
                         for (int i = 0; i < lista.size(); i++) {
                             System.out.println("Posicion->" + i + "\n" + lista.get(i));
                         }
+                    } else {
+                        System.out.println("Primero debe hacer el Log-In");
+                        System.out.println("");
                     }
                 }
                 break;
@@ -212,11 +224,34 @@ public class Lab2_JoseHernandez_11911119 {
                             default:
 
                         }
+                    } else {
+                        System.out.println("Primero debe hacer el Log-In");
+                        System.out.println("");
                     }
                 }
                 break;
                 case 7: {
-
+                    if (acceso) {
+                        System.out.println("Ingrese la posicion de la Universidad a descender: ");
+                        int pos = input.nextInt();
+                        if (((Universidades) lista.get(pos)).getNivel().equals("Publica")) {
+                            lista.remove(pos);
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Publica Prestigiosa")) {
+                            ((Universidades) lista.get(pos)).setNivel("Publica");
+                            ((Universidades) lista.get(pos)).setCostoMensual(0);
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Nacional")) {
+                            ((Universidades) lista.get(pos)).setNivel("Publica Prestigiosa");
+                            ((Universidades) lista.get(pos)).setCostoMensual(200);
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada")) {
+                            lista.remove(pos);
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada Prestigiosa")) {
+                            ((Universidades) lista.get(pos)).setNivel("Privada");
+                            ((Universidades) lista.get(pos)).setCostoMensual(6000);
+                        }
+                    } else {
+                        System.out.println("Primero debe hacer el Log-In");
+                        System.out.println("");
+                    }
                 }
                 break;
 
@@ -224,8 +259,13 @@ public class Lab2_JoseHernandez_11911119 {
 
                 }
                 break;
+
+                case 9: {
+                    System.exit(0);
+                }
+                break;
                 default:
-                    throw new AssertionError();
+
             }
         }//fin del while
     }//fin del main.
