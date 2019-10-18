@@ -104,8 +104,9 @@ public class Universidades {
     @Override
     public String toString() {
         return "" + "-Nombre de la universidad: " + nombreUni + "\n"
+                + "-Sucursal: " + Sucursal + "\n"
                 + "-Año de Creacion: " + creacion + "\n"
-                + "-Costo Mensual: " + costoMensual + "\n"
+                + "-Costo Mensual: " + "Lps." + costoMensual + "\n"
                 + "-Nivel: " + nivel + "\n";
     }
 
