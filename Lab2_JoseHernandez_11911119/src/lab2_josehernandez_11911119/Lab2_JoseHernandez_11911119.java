@@ -118,7 +118,22 @@ public class Lab2_JoseHernandez_11911119 {
                 break;
 
                 case 4: {
+                    if (acceso) {
+                        System.out.println("Ingrese la posicion de la universidad para ascender: ");
+                        int pos = input.nextInt();
+                        if (((Universidades) lista.get(pos)).getNivel().equals("Publica")) {
+                            ((Universidades) lista.get(pos)).setNivel("Publica Prestigiosa");
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Publica Prestigiosa")) {
+                            ((Universidades) lista.get(pos)).setNivel("Nacional");
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Nacional")) {
+                            System.out.println("Esta Universidad ya no se puede ascender mas");
 
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada")) {
+                            ((Universidades) lista.get(pos)).setNivel("Privada Prestigiosa");
+                        } else if (((Universidades) lista.get(pos)).getNivel().equals("Privada Prestigiosa")) {
+                            System.out.println("Esta universidad ya no se puede ascender mas");
+                        }
+                    }
                 }
                 break;
 
