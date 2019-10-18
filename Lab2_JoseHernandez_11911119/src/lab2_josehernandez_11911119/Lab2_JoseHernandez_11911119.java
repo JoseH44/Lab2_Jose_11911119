@@ -109,6 +109,66 @@ public class Lab2_JoseHernandez_11911119 {
                     }
                 }
                 break;
+
+                case 6: {
+                    if (acceso) {
+                        System.out.print("Ingrese la posicion de la universidad que desea Modificar: ");
+                        int uniPos = input.nextInt();
+                        System.out.println("1-Modificar Nombre de la Universidad " + "\n"
+                                + "2- Modificar Nombre del Rector" + "\n"
+                                + "3- Modificar Sucursal de la Universidad" + "\n"
+                                + "4-Modificar El año de la creacion" + "\n"
+                                + "5-Modificar El numero de Maestros" + "\n"
+                                + "6-Modificar El numero de estudiantes" + "\n");
+                        switch (uniPos) {
+                            case 1: {
+                                System.out.print("Ingrese el nuevo Nombre de la Universidad: ");
+                                String newName = input.nextLine();
+                                ((Universidades) lista.get(uniPos)).setNombreUni(newName);
+                            }
+
+                            break;
+
+                            case 2: {
+                                System.out.print("Ingrese el nuevo nombre del Rector: ");
+                                String newName = input.nextLine();
+                                ((Universidades) lista.get(uniPos)).setNombreRect(newName);
+                            }
+                            break;
+                            case 3: {
+                                System.out.print("Ingrese la nueva Sucursal: ");
+                                String newSucursal = input.nextLine();
+                                ((Universidades) lista.get(uniPos)).setSucursal(newSucursal);
+                            }
+                            break;
+
+                            case 4: {
+                                System.out.print("Ingrese el nuevo año de creacion: ");
+                                int newAño = input.nextInt();
+                                ((Universidades) lista.get(uniPos)).setCreacion(newAño);
+                            }
+
+                            break;
+
+                            case 5: {
+                                System.out.print("Ingrese el nuevo numero de maestros: ");
+                                int newMaestros = input.nextInt();
+                                ((Universidades) lista.get(uniPos)).setMaestros(newMaestros);
+                            }
+                            break;
+
+                            case 6: {
+                                System.out.print("Ingrese el nuevo numero de estudiantes: ");
+                                int newEstudiantes = input.nextInt();
+                                ((Universidades)lista.get(uniPos)).setEstudiantes(newEstudiantes);
+                            }
+                            break;
+                            default:
+
+                        }
+                    }
+                }
+                break;
                 default:
                     throw new AssertionError();
             }
