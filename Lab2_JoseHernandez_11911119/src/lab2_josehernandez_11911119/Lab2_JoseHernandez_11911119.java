@@ -2,6 +2,7 @@ package lab2_josehernandez_11911119;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Lab2_JoseHernandez_11911119 {
     public static boolean acceso = false;
 
     public static void main(String[] args) {
+        Random rand = new Random();
         ArrayList lista = new ArrayList();
         int opcionMenu = 0;
         while (opcionMenu != 9) {
@@ -45,7 +47,7 @@ public class Lab2_JoseHernandez_11911119 {
                         nombreUni = input.nextLine();
                         System.out.print("Ingrese el nombre del Rector: ");
                         String nombreRect = input.nextLine();
-                        nombreRect = input.nextLine();
+                        //nombreRect = input.nextLine();
                         System.out.print("Ingrese la sucursal de la Universidad: ");
                         String Sucursal = input.nextLine();
                         while (lista.contains(Sucursal)) {
@@ -256,7 +258,15 @@ public class Lab2_JoseHernandez_11911119 {
                 break;
 
                 case 8: {
-
+                    int pos = 1 + rand.nextInt(lista.size());
+                    for (int i = 0; i < lista.size(); i++) {
+                        if (((Universidades) lista.get(i)).getNivel().equals("Nacional")) {
+                            ((Universidades) lista.get(i)).setNivel("Publica Prestigiosa");
+                            if (((Universidades) lista.get(pos)).getNivel().equals("Publica Prestigiosa")) {
+                                ((Universidades) lista.get(pos)).setNivel("Nacional");
+                            }
+                        }
+                    }
                 }
                 break;
 
