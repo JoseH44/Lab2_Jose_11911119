@@ -47,7 +47,12 @@ public class Lab2_JoseHernandez_11911119 {
                         nombreRect = input.nextLine();
                         System.out.print("Ingrese la sucursal de la Universidad: ");
                         String Sucursal = input.nextLine();
-                        //Sucursal = input.nextLine();
+                        while (lista.contains(Sucursal)) {
+                            System.out.println("Esta sucursal ya existe");
+                            System.out.print("Ingrese la sucursal de la Universidad: ");
+                            Sucursal = input.nextLine();
+                        }
+
                         System.out.print("Ingrese el año de creacion: ");
                         int creacion = input.nextInt();
                         System.out.print("Ingrese el numero de maestros: ");
@@ -104,7 +109,7 @@ public class Lab2_JoseHernandez_11911119 {
                 case 5: {
                     if (acceso) {
                         for (int i = 0; i < lista.size(); i++) {
-                            System.out.println(lista.get(i));
+                            System.out.println("Posicion->" + i + " " + lista.get(i));
                         }
                     }
                 }
@@ -119,8 +124,10 @@ public class Lab2_JoseHernandez_11911119 {
                                 + "3- Modificar Sucursal de la Universidad" + "\n"
                                 + "4-Modificar El año de la creacion" + "\n"
                                 + "5-Modificar El numero de Maestros" + "\n"
-                                + "6-Modificar El numero de estudiantes" + "\n");
-                        switch (uniPos) {
+                                + "6-Modificar El numero de estudiantes" + "\n"
+                                + "Ingrese el numero de la opcion a ejecutar: ");
+                        int subMenu = input.nextInt();
+                        switch (subMenu) {
                             case 1: {
                                 System.out.print("Ingrese el nuevo Nombre de la Universidad: ");
                                 String newName = input.nextLine();
@@ -138,6 +145,11 @@ public class Lab2_JoseHernandez_11911119 {
                             case 3: {
                                 System.out.print("Ingrese la nueva Sucursal: ");
                                 String newSucursal = input.nextLine();
+                                while (lista.contains(Sucursal)) {
+                                    System.out.println("Esta sucursal ya existe");
+                                    System.out.print("Ingrese la sucursal de la Universidad: ");
+                                    Sucursal = input.nextLine();
+                                }
                                 ((Universidades) lista.get(uniPos)).setSucursal(newSucursal);
                             }
                             break;
@@ -160,7 +172,7 @@ public class Lab2_JoseHernandez_11911119 {
                             case 6: {
                                 System.out.print("Ingrese el nuevo numero de estudiantes: ");
                                 int newEstudiantes = input.nextInt();
-                                ((Universidades)lista.get(uniPos)).setEstudiantes(newEstudiantes);
+                                ((Universidades) lista.get(uniPos)).setEstudiantes(newEstudiantes);
                             }
                             break;
                             default:
